@@ -6,4 +6,6 @@
     <input type="email" name="email" placeholder="Insira o e-mail">
     <input type="password" name="password" placeholder="Insira a senha"><br>
     <button type="submit">Enviar</button>
+
+{{--    teste!--}}
 </form>
