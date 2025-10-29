@@ -4,8 +4,7 @@
 @section('content')
     <h1>Criar usuário</h1>
 
-    {{--    teste!--}}
-
+    <x-alert/>
     <form action={{ route('users.store') }} method="POST">
         @csrf()
         <input type="text" name="name" placeholder="Insira o nome">

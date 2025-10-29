@@ -11,6 +11,10 @@ Route::get('/products',
     [\App\Http\Controllers\Admin\ProductController::class, 'index'])->name('produtos.index');
 
 // chama o controlador, que por sua vez executa a action (função), ex: index ou create
+Route::get('/users/{user}/edit',
+[\App\Http\Controllers\Admin\UserController::class, 'edit'])->name('users.edit');
+Route::put('/users/{user}',
+[\App\Http\Controllers\Admin\UserController::class, 'update'])->name('users.update');
 Route::get('/users',
     [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
 Route::get('/users/create',

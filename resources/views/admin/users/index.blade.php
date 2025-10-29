@@ -3,6 +3,8 @@
 @section('title', 'Lista de Usuários')
 @section('content')
 <h1>Usuários</h1>
+
+<x-alert/>
 <a href={{ route('users.create') }}>Novo usuário</a>
 <table>
     <thead>
@@ -17,7 +19,9 @@
         <tr>
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
-            <td>-</td>
+            <td>
+                <a href="{{ route('users.edit', $user->id) }}">Edit</a>
+            </td>
         </tr>
     @empty
         <tr>
