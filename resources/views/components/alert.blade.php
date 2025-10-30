@@ -10,10 +10,17 @@
     </div>
 @endif
 
-@if($errors->any())
+@if(session()->has('error'))
+    <div>
+        {{ session('error') }}
+    </div>
+@endif
+
+@if ($errors->any())
     <ul>
         @foreach($errors->all() as $error)
-            <li class="text-red-500"> {{$error}}</li>
+            <li> {{ $error }}</li>
         @endforeach
     </ul>
 @endif
+
