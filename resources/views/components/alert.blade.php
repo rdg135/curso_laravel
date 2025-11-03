@@ -1,17 +1,17 @@
 @if(session()->has('success'))
-    <div>
+    <div style="color: green">
         {{ session('success') }}
     </div>
 @endif
 
 @if(session()->has('message'))
-    <div>
+    <div style="color: navy">
         {{ session('message') }}
     </div>
 @endif
 
 @if(session()->has('error'))
-    <div>
+    <div style="color: darkred">
         {{ session('error') }}
     </div>
 @endif
