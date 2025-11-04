@@ -2,6 +2,6 @@
 
 return [
     'admins' => [
-        'rodrigo.aragao@gmail.com'
+        'eu@mesmo.com'
     ]
 ];

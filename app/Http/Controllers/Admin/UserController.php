@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends Controller
 {
@@ -45,6 +46,7 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request, string $id)
     {
+
         if (!$user = User::find($id)) {
             return back()->with('message', 'User not found.');
         }
@@ -68,6 +70,10 @@ class UserController extends Controller
 
     public function destroy(string $id)
     {
+       /* if(Gate::denies('is-admin')){
+            return back()->with('message', 'You are not allowed to do this action.');
+        }*/
+
         if (!$user = User::find($id)) {
             return redirect()->route('users.index')->with('message', 'User not found.');
         }
